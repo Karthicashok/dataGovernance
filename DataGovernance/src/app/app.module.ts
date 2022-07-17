@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './Component/login/login.component';
 import { HomeComponent } from './Component/home/home.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
@@ -45,7 +44,6 @@ const oktaAuth = new OktaAuth(environment.oktaconfig);
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     HomeComponent,
     DataTableComponent,
     LayersComponent,
