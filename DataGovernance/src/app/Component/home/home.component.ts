@@ -1,8 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../../service/data.service';
-import { AuthState, OktaAuth } from '@okta/okta-auth-js';
-import { environment } from 'src/environments/environment';
 import resource from '../../resource.json';
 import { AppComponent } from '../../app.component';
 import Swal from 'sweetalert2';
@@ -29,14 +27,11 @@ export class HomeComponent implements OnInit {
       (list: any) => {
         if (list != undefined) {
           this.displayContent = true;
-         
           this.dblist = list['@search.count'];
-         
           this.resources[2].items = this.dblist;
         }
       },
       (error: any) => {
-        
         if(error.status==401){
           this.router.navigateByUrl('access_denied');
         }else{
@@ -52,7 +47,6 @@ export class HomeComponent implements OnInit {
   }
   redirect(data: any) {
     //it will redirect to data page with the selected data.
-    
     localStorage.setItem('source', JSON.stringify(data));
     this.router.navigateByUrl('data');
   }

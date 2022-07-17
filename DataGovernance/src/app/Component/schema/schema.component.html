@@ -22,7 +22,7 @@
         <button
           mat-raised-button
           class="editbtn"
-          *ngIf="!edit&&role=='admin'"
+          *ngIf="!edit&&role=='admin'&&onAuthorized"
           (click)="editSchema()"
         >
           edit

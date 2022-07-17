@@ -8,7 +8,7 @@
 .btn-primary {
   margin: 10px;
   margin-left: 90%;
- 
+  /* cursor: not-allowed !important; */
 }
 button:disabled {
   cursor: not-allowed;
@@ -49,7 +49,7 @@ a {
   border-bottom: inset;
 }
 #image {
-  
+  /* width: 40%; */
   padding: 3px;
   margin-left: 12px;
   border: 0px solid #046b99;
@@ -84,7 +84,7 @@ a {
   margin-bottom: 32px;
 }
 #username {
- 
+  /* margin-left: 93%; */
   font-size: 17px;
   font-weight: 400;
 }

@@ -1,9 +1,6 @@
 import { Injectable, Injector } from '@angular/core';
 import {
-  HttpEvent,
-  HttpHandler,
   HttpInterceptor,
-  HttpRequest,
 } from '@angular/common/http';
 import { DataService } from './data.service';
 import { Router } from '@angular/router';
@@ -21,8 +18,8 @@ export class TokenInterceptorService implements HttpInterceptor {
     let url = req.url;
 
     let acess = this.DATASERVICE.getrole();
-   
-    let Allowed_acess = acess[1].Allowed_acess;
+    
+    let Allowed_acess = acess;
 
     if (this.sameurl(Allowed_acess, url)) {
       let tokenizedReq = req.clone({
@@ -38,7 +35,7 @@ export class TokenInterceptorService implements HttpInterceptor {
   sameurl(Allowed_acess: any, url: any) {
     var condition: any;
     Allowed_acess?.map((res: any) => {
-      if (url.includes(res)) {
+      if (url.includes(res.url)) {
         condition = true;
       }
     });

@@ -59,7 +59,6 @@ export class DataService {
     );
   }
   uploadschema(file: any) {
-    
     let req = {
       limit: environment.limit,
       offset: environment.offset,
@@ -76,8 +75,7 @@ export class DataService {
       .accessToken;
   }
   getrole() {
-    
-    return Authorization.Authorization;
+    return Authorization.allowedUrls;
   }
   updateSchema(data: any) {
     return this.http.put(
