@@ -1,8 +1,7 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { DataService } from '../../service/data.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Observable, take, Subscription } from 'rxjs';
-import errors from '../../user.json';
+import {  take } from 'rxjs';
 import { NgDynamicBreadcrumbService } from 'ng-dynamic-breadcrumb';
 import { AppComponent } from '../../app.component';
 import Swal from 'sweetalert2';
@@ -13,14 +12,12 @@ import Swal from 'sweetalert2';
 })
 export class DataTableComponent implements OnInit {
   public dblist: any[] | any;
-  data: any;
   selectedData: any;
   imageData: any;
   accountName: any;
   selectedAccount: any;
   selectaccountname: any;
   selectedaccountpath: any;
-  @Output() events: Observable<void> | any;
   showTable = false;
   spinner = false;
   dtOptions: DataTables.Settings = {};
@@ -44,17 +41,14 @@ export class DataTableComponent implements OnInit {
     }
     this.selectedData = JSON.parse(localStorage.getItem('source')!).name;
     this.imageData = JSON.parse(localStorage.getItem('source')!).image;
-    
    
+    
   }
 
   ngOnInit() {
     // intialize the data table
    
     this.updateBreadcrumb();
-    this.activatedRoute.data.subscribe((data: any) => {
-      
-    });
     this.dblist = [];
     this.dtOptions = {
       pagingType: 'full_numbers',
@@ -85,7 +79,7 @@ export class DataTableComponent implements OnInit {
     this.dataservice.getAccounts().subscribe(
       (data: any) => {
         this.AccountList = data.value;
-       
+      
 
         if (this.accountName) {
           this.AccountList.map((res: any) => {
@@ -97,7 +91,7 @@ export class DataTableComponent implements OnInit {
         }
       },
       (error: any) => {
-       
+      
         if(error.status==401){
           this.router.navigateByUrl('access_denied');
         }else{

@@ -119,5 +119,47 @@
         "/referredEntities"
       ]
     }
-  ]
+  ],
+  "allowedUrls": [
+    {
+        "url": "/health",
+        "method": "GET",
+        "includes": true
+    },{
+      "url":"/getaccounts",
+        "method": "GET",
+        "includes": true
+    },{
+      "url": "/getDbList",
+      "method": "GET",
+      "includes": true
+    },{
+      "url": "/getLayers",
+      "method": "GET",
+      "includes": true
+    },{
+      "url":  "/getschemas",
+      "method": "GET",
+      "includes": true
+    },{
+      "url":   "/downloadcsv",
+      "method": "GET",
+      "includes": true
+    },{
+      "url":   "/uploadcsv",
+      "method": "GET",
+      "includes": true
+    },{
+      "url":  "/gettablename",
+      "method": "GET",
+      "includes": true
+    },{
+      "url":   "/referredEntities",
+      "method": "GET",
+      "includes": true
+    },{
+      "url":   "/edit",
+      "method": "GET",
+      "includes": true
+    }]
 }

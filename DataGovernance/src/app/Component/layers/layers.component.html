@@ -71,6 +71,7 @@
                         [ngClass]="select == true ? '' : 'disabled'"
                         [disabled]="!select"
                         (click)="uploadFile()"
+                        *ngIf="onAuthorized"
                       >
                         Upload file
                       </button>
@@ -85,6 +86,7 @@
                         (click)="export()"
                         [disabled]="!select"
                         [ngClass]="fileExport == true ? '' : 'disabled'"
+                        *ngIf="onAuthorized"
                       >
                         Export schema
                       </button>

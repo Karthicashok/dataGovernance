@@ -2,16 +2,17 @@ import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { DataService } from '../../service/data.service';
 import { Router } from '@angular/router';
 import { take } from 'rxjs';
-import * as XLSX from 'xlsx';
+
 import Swal from 'sweetalert2';
 import CryptoJS from 'crypto-js';
 import { environment } from 'src/environments/environment';
-import { Xliff } from '@angular/compiler';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import { HttpClient} from '@angular/common/http';
 import { NgDynamicBreadcrumbService } from 'ng-dynamic-breadcrumb';
 import { MatDialog } from '@angular/material/dialog';
 import { AppComponent } from 'src/app/app.component';
 import { UpdateComponent } from '../update/update.component';
+import user from '../../user.json'
 @Component({
   selector: 'app-layers',
   templateUrl: './layers.component.html',
@@ -22,21 +23,14 @@ export class LayersComponent implements OnInit {
   data: any;
   select = false;
   showTable = false;
-  AccountList: any;
-  dbList = false;
-  upload = true;
-  datatable: any;
-  selectedId: any;
+  onAuthorized=false;
   sourcename: any;
-  currentIndex: any;
   fileupload = false;
   fileExport = false;
   selectedDb: any;
   spinner = true;
   name: any;
   file: any;
-  eventsAccount: EventEmitter<any> = new EventEmitter<any>();
-  eventData: EventEmitter<any> = new EventEmitter<any>();
   selectedIndex: any;
   selectedIndex2: any;
   public selectedLayers: any;
@@ -54,20 +48,21 @@ export class LayersComponent implements OnInit {
    
     this.showlayers(this.data.path);
     this.name = JSON.parse(localStorage.getItem('account')!);
-   
+    
     this.sourcename = JSON.parse(localStorage.getItem('source')!).name;
   }
 
   ngOnInit() {
     // intialize the data table
     this.updateBreadcrumb();
-   
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 5,
       lengthMenu: [5, 10, 25],
       processing: true,
     };
+   
+   this.sameUrl();
   }
   export() {
     // it is for export the selected data in the radio button and pass it path as parameter to getschemaList() then its path will be opened as excel sheet
@@ -97,11 +92,11 @@ export class LayersComponent implements OnInit {
             const decryptedStringResponse = decryptedResponse.toString(
               CryptoJS.enc.Utf8
             );
-          
+           
             await this.downloadCSV(decryptedStringResponse, res.filename);
           },
           (error: any) => {
-           
+          
             if(error.status==401){
               this.router.navigateByUrl('access_denied');
             }else{
@@ -116,7 +111,17 @@ export class LayersComponent implements OnInit {
         );
     }
   }
-
+sameUrl(){
+  let download="/downloadcsv";
+  let upload ="/uploadcsv";
+  user.allowedUrls.map((res:any)=>{
+    if(download.includes(res.url)){
+      this.onAuthorized=true;
+    }else if(upload.includes(res.url)){
+     this.onAuthorized=true;
+    }
+  })
+}
   async downloadCSV(downloadurl: string, downloadItem: string) {
     try {
      
@@ -129,7 +134,7 @@ export class LayersComponent implements OnInit {
         dwldLink.setAttribute('target', '_blank');
       }
       dwldLink.setAttribute('href', url);
-      
+     
       dwldLink.setAttribute('download', 'schema_' + downloadItem);
       dwldLink.style.visibility = 'hidden';
       document.body.appendChild(dwldLink);
@@ -180,7 +185,7 @@ export class LayersComponent implements OnInit {
           let templayer: any = [];
           templayer = await this.gettabledata();
           localStorage.setItem('layers', JSON.stringify(templayer));
-         
+          
           setTimeout(() => {
             $('#datatableexample').DataTable({
               pagingType: 'full_numbers',
@@ -193,7 +198,6 @@ export class LayersComponent implements OnInit {
           this.spinner = false;
         },
         (error: any) => {
-        
           if(error.status==401){
             this.router.navigateByUrl('access_denied');
           }else{
@@ -211,10 +215,10 @@ export class LayersComponent implements OnInit {
   async gettabledata() {
     let templayer;
     templayer = await this.layers.map(async (obj: any) => {
-      
+     
       let val = Promise.resolve(this.tableData(obj.path));
       val.then((tabledata) => {
-       
+        
         obj.tables = tabledata;
         localStorage.setItem(obj.name, JSON.stringify(tabledata));
        
@@ -225,7 +229,7 @@ export class LayersComponent implements OnInit {
       
     });
     let final = await Promise.all(templayer);
-    
+   
     return final;
   }
   fileChanged(e: any) {
@@ -252,6 +256,7 @@ export class LayersComponent implements OnInit {
     });
     dialogref.afterClosed().subscribe((res) => {
       // received data from dialog-component
+    
       this.selectedLayers = res.data;
       this.select = res.select;
       this.fileExport = res.fileExport;
@@ -259,14 +264,13 @@ export class LayersComponent implements OnInit {
     });
   }
   async tableData(path: any) {
-  
+   
     return new Promise((resolve, reject) => {
       this.dataservice.gettableData(path + '/tables').subscribe(
         (res: any) => {
           resolve(res.value);
         },
         (error: any) => {
-         
           if(error.status==401){
             this.router.navigateByUrl('access_denied');
           }else{

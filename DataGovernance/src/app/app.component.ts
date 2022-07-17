@@ -27,12 +27,12 @@ export class AppComponent {
   ) {}
 
   public ngOnInit(): void {
-    
+    console.log(this.tabledata);
     this.isAuthenticated$ = this._oktaStateService.authState$.pipe(
       filter((s: AuthState) => !!s),
       map((s: AuthState) => s.isAuthenticated ?? false)
     );
-   
+    console.log('------', this.isAuthenticated$);
     this.username = this._oktaStateService.authState$.pipe(
       filter(
         (authState: AuthState) => !!authState && !!authState.isAuthenticated
@@ -48,7 +48,7 @@ export class AppComponent {
           authState.idToken?.claims.preferred_username ?? ''
       )
     );
-    
+    console.log(this.username);
   }
   public async signIn(): Promise<void> {
     await this._oktaAuth
