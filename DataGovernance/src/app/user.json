@@ -1,0 +1,123 @@
+{
+  "users": [
+    {
+      "name": "id",
+      "description": "null",
+      "type": "String",
+      "classifications_AssociatePII": "Associatiate PII",
+      "classifications_Client_PII": "Client PII",
+      "classifications": "",
+      "id": "6f82b3bc-899f-4029-acf1-a7f6f6f60000"
+    },
+    {
+      "name": "fw_isdeleted",
+      "description": "null",
+      "type": "Boolean",
+      "classifications_AssociatePII": "",
+      "classifications_Client_PII": "Client PII",
+      "classifications": "",
+      "id": "6f82b3bc-899f-4029-acf1-a7f6f6f60000"
+    },
+    {
+      "name": "received_timestamp",
+      "description": "null",
+      "type": "DateTime",
+      "classifications_AssociatePII": "",
+      "classifications_Client_PII": "",
+      "classifications": "",
+      "id": "6f82b3bc-899f-4029-acf1-a7f6f6f60000"
+    },
+    {
+      "name": "is_encrypted",
+      "description": "null",
+      "type": "Boolean",
+      "classifications_AssociatePII": "",
+      "classifications_Client_PII": "",
+      "classifications": "",
+      "id": "6f82b3bc-899f-4029-acf1-a7f6f6f60000"
+    },
+    {
+      "name": "src_ts",
+      "description": "null",
+      "type": "Int64",
+      "classifications_AssociatePII": "Associatiate PII",
+      "classifications_Client_PII": "Client PII",
+      "classifications": "",
+      "id": "6f82b3bc-899f-4029-acf1-a7f6f6f60000"
+    },
+    {
+      "name": "fw_isdeleted_timestamp",
+      "description": "null",
+      "type": "DateTime",
+      "classifications_AssociatePII": "Associatiate PII",
+      "classifications_Client_PII": "Client PII",
+      "classifications": "",
+      "id": "6f82b3bc-899f-4029-acf1-a7f6f6f60000"
+    },
+    {
+      "name": "fw_createdts",
+      "description": "null",
+      "type": "DateTime",
+      "classifications_AssociatePII": "Associatiate PII",
+      "classifications_Client_PII": "Client PII",
+      "classifications": "",
+      "id": "6f82b3bc-899f-4029-acf1-a7f6f6f60000"
+    },
+    {
+      "name": "CreatedDate",
+      "description": "null",
+      "type": "DateTime",
+      "classifications_AssociatePII": "Associatiate PII",
+      "classifications_Client_PII": "Client PII",
+      "classifications": "",
+      "id": "6f82b3bc-899f-4029-acf1-a7f6f6f60000"
+    },
+    {
+      "name": "data",
+      "description": "null",
+      "type": "String",
+      "classifications_AssociatePII": "",
+      "classifications_Client_PII": "",
+      "classifications": "",
+      "id": "6f82b3bc-899f-4029-acf1-a7f6f6f60000"
+    },
+    {
+      "name": "fw_createdby",
+      "description": "null",
+      "type": "String",
+      "classifications_AssociatePII": "",
+      "classifications_Client_PII": "",
+      "classifications": "",
+      "id": "6f82b3bc-899f-4029-acf1-a7f6f6f60000"
+    }
+  ],
+  "errors": [
+    {
+      "401": "Unauthorized"
+    },
+    {
+      "404": "not found"
+    },
+    {
+      "500": "error in runtime or catch block"
+    }
+  ],
+  "Authorization": [
+    {
+      "role": "admin"
+    },
+    {
+      "Allowed_acess": [
+        "/health",
+        "/getaccounts",
+        "/getDbList",
+        "/getLayers",
+        "/getschemas",
+        "/downloadcsv",
+        "/uploadcsv",
+        "/gettablename",
+        "/referredEntities"
+      ]
+    }
+  ]
+}

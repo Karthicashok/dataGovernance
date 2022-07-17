@@ -1,0 +1,126 @@
+.start {
+  margin: 20px;
+}
+.bg-primary {
+  text-align: center;
+  color: white;
+}
+.btn-primary {
+  margin: 10px;
+  margin-left: 90%;
+ 
+}
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+#signinbtn {
+  position: absolute;
+  right: 20px;
+  background-color: #046b99;
+  border: 0px solid #046b99;
+  color: white;
+  cursor: pointer;
+}
+#loginbtn {
+  color: #4d4d4d;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: -15px;
+}
+#top {
+  margin-left: 21px;
+  font-size: 17px;
+  font-weight: 400;
+}
+mat-icon {
+  margin-left: 10%;
+  color: white;
+}
+a {
+  margin-left: 9px;
+  cursor: pointer;
+}
+.mat-toolbar.mat-primary {
+  background: white;
+  color: #696969;
+  height: 48px;
+  border-bottom: inset;
+}
+#image {
+  
+  padding: 3px;
+  margin-left: 12px;
+  border: 0px solid #046b99;
+  background: white;
+  cursor: pointer;
+}
+.tp-container {
+  position: initial;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+}
+
+.side {
+  background: #046b99;
+  width: 54px;
+  overflow-x: hidden;
+}
+.user {
+  width: 42px;
+  margin-left: 5px;
+  margin-bottom: -187vh;
+  border-radius: 50%;
+}
+.firstToolbar {
+  background-color: #046b99 !important;
+  border-bottom: 0px !important;
+}
+.toolbar {
+  margin-bottom: 32px;
+}
+#username {
+ 
+  font-size: 17px;
+  font-weight: 400;
+}
+.headerbutton {
+  margin-left: 69%;
+  background-color: #046b99;
+}
+#headericon {
+  margin-left: 189vh;
+  margin-top: 25px;
+}
+.icon {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  width: 38px;
+  height: 36px;
+  background: #686666;
+  border-radius: 52px;
+  padding-left: 9px;
+  font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+#username {
+  font-size: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+#logout {
+  margin-left: 106px;
+}
+.popup {
+  width: 200px;
+}
+.mail {
+  margin-left: 12%;
+}

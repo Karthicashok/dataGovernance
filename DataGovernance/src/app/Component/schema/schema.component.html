@@ -1,0 +1,105 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened class="sidenavigation">
+    <mat-nav-list>
+      <app-sidenav
+        [sourcename]="sourcename"
+        [accountname]="name.name"
+        [accountpath]="name.path"
+        [selecteddb]="database.name"
+        [selectedlayers]="data2"
+        [selectedLayer]="data.name"
+        [selectedSheet]="sheetname"
+        (eventsSubject)="onschemaData($event)"
+      ></app-sidenav>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div id="content">
+      <div class="container">
+        <div class="row">
+          <h1>{{ sheetname }}</h1>
+        </div>
+        <button
+          mat-raised-button
+          class="editbtn"
+          *ngIf="!edit&&role=='admin'"
+          (click)="editSchema()"
+        >
+          edit
+        </button>
+        <div class="row">
+          <table
+            class="table table-stripped table-bordered table-sm row-border hover"
+            id="datatableexample"
+            datatable
+            [dtOptions]="dtOptions"
+          >
+            <thead>
+              <tr>
+                <th>name</th>
+                <th>Column level classification</th>
+                <th>description</th>
+                <th>type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let obj of tabledata; index as i" id="schema">
+                <td>{{ obj.name }}</td>
+                <td>
+                  <span *ngIf="edit == false && obj.classifications">
+                    <span *ngFor="let obj2 of obj.classifications">
+                      {{ obj2.name }}</span
+                    ></span
+                  >
+                  <ng-multiselect-dropdown
+                    *ngIf="edit"
+                    [placeholder]="'Select'"
+                    [settings]="dropdownSettings"
+                    [data]="dropdownList"
+                    [(ngModel)]="obj.classifications"
+                    (onSelect)="onItemSelect($event, obj)"
+                    (onSelectAll)="onSelectAll($event, obj)"
+                    (onDeSelect)="onDeselect($event, obj)"
+                    (onDeSelectAll)="onDeselectAll($event, obj)"
+                  >
+                  </ng-multiselect-dropdown>
+                </td>
+                <td>
+                  {{ edit == false ? obj.description : "" }}
+                  <input
+                    matInput
+                    type="text"
+                    *ngIf="edit"
+                    [(ngModel)]="obj.description"
+                    (keyup)="type(obj.description, obj)"
+                  />
+                </td>
+                <td>{{ obj.type }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <button
+              mat-button
+              mat-dialog-close
+              *ngIf="edit"
+              id="savebtn"
+              [ngClass]="isfileSelect == true ? '' : 'disabled'"
+              [disabled]="!isfileSelect"
+              (click)="save()"
+            >
+              Save
+            </button>
+          </div>
+          <div class="col-sm-4">
+            <button mat-button *ngIf="edit" id="cancel" (click)="canceledit()">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

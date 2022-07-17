@@ -1,0 +1,22 @@
+.disabled {
+  opacity: 0.3;
+  cursor: not-allowed !important;
+}
+#selection {
+  margin-top: 9%;
+}
+#donebtn {
+  margin-left: 35vh;
+  background-color: #046b99;
+  cursor: pointer;
+  border: 1.5px solid #046b99;
+  color: white;
+}
+#cancelbtn {
+  margin-left: 45vh;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid white;
+  color: #046b99;
+  text-transform: uppercase;
+}

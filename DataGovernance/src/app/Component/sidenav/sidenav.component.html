@@ -1,0 +1,31 @@
+<details open>
+  <summary matTooltip="{{ sourcename }}">
+    <a (click)="backtodata()" class="db">
+      <img
+        src="../../assets/icon-azure-storage-account.1b88120f00804a650a4c283f61bedc94.png"
+      />
+      {{ sourcename }}
+    </a>
+  </summary>
+  <details *ngIf="accountname" open>
+    <summary matTooltip="{{ accountname }}">
+      <img src="{{ imgdata }}" class="image" />
+      {{
+        accountname.length > 28
+          ? (accountname | slice: 0:28) + "..."
+          : accountname
+      }}
+    </summary>
+    <details *ngIf="accountpath" open>
+      <summary>
+        <a (click)="getpath()" class="db">
+          <img
+            src="../../assets/icon-entity-file-system.9071055b7f80e56b2a88544eb2b10baf.png"
+          />
+          Database
+        </a>
+      </summary>
+     
+    </details>
+  </details>
+</details>

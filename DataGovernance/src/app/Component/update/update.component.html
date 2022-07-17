@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <h1>Upload your excel file</h1>
+  </div>
+  <div class="row">
+    <input
+      type="file"
+      class="primary"
+      id="upload"
+      #uploader
+      (change)="fileChanged($event)"
+      accept=".xlsx"
+    />
+  </div>
+  <div class="row" id="selection">
+    <div class="col-sm-4">
+      <button mat-stroked-button id="cancelbtn" (click)="close()">
+        Cancel
+      </button>
+    </div>
+    <div class="col-sm-4">
+      <button
+        mat-stroked-button
+        id="donebtn"
+        [ngClass]="isfileSelect == true ? '' : 'disabled'"
+        [disabled]="!isfileSelect"
+        (click)="done(file)"
+      >
+        Done
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,98 @@
+{
+  "tableId": { "table_id": "3b50d951-0e49-4853-a780-3ff6f6f60000" },
+  "classificationsType": [
+    { "name": "Associatiate PII" },
+    { "name": "Client PII" }
+  ],
+  "referredEntities": [
+    {
+      "name": "fw_createdts",
+      "description": "Test 3",
+      "type": "DateTime",
+      "col_id": "3b50d951-0e49-4853-a780-3ff6f6f60009",
+      "createTime": 1633383379537,
+      "updateTime": 1633383379537,
+
+      "classifications": [
+        { "name": "Associatiate PII" },
+        { "name": "Client PII" }
+      ]
+    },
+    {
+      "name": "derived_id",
+      "description": "Test2",
+      "type": "String",
+      "col_id": "3b50d951-0e49-4853-a780-3ff6f6f60008",
+      "createTime": 1633383379537,
+      "updateTime": 1633383379537,
+
+      "classifications": [{ "name": "Client PII" }]
+    },
+    {
+      "name": "is_encrypted",
+      "description": "Thanyavaad3",
+      "type": "boolean",
+      "col_id": "3b50d951-0e49-4853-a780-3ff6f6f6000c",
+      "createTime": 1633383379537,
+      "updateTime": 1633383379537
+    },
+    {
+      "name": "id",
+      "description": "Thanyavaad4",
+      "type": "String",
+      "col_id": "3b50d951-0e49-4853-a780-3ff6f6f6000b",
+      "createTime": 1633383379537,
+      "updateTime": 1633383379537
+    },
+    {
+      "name": "gen_Code",
+      "description": "Thanyavaad5",
+      "type": "string",
+      "col_id": "3b50d951-0e49-4853-a780-3ff6f6f6000a",
+      "createTime": 1633383379537,
+      "updateTime": 1633383379537
+    },
+    {
+      "name": "fw_modifiedts",
+      "description": "Test",
+      "type": "DateTime",
+      "col_id": "3b50d951-0e49-4853-a780-3ff6f6f6000f",
+      "createTime": 1633383379537,
+      "updateTime": 1633383379537,
+
+      "classifications": [{ "name": "Associatiate PII" }]
+    },
+    {
+      "name": "OUID",
+      "description": "Thanyavaad7",
+      "type": "string",
+      "col_id": "3b50d951-0e49-4853-a780-3ff6f6f6000e",
+      "createTime": 1633383379537,
+      "updateTime": 1633383379537
+    },
+    {
+      "name": "fw_derived_isdeleted",
+      "description": "Thanyavaad8",
+      "type": "boolean",
+      "col_id": "3b50d951-0e49-4853-a780-3ff6f6f6000d",
+      "createTime": 1633383379537,
+      "updateTime": 1633383379537
+    },
+    {
+      "name": "src_ts",
+      "description": "Thanyavaad9",
+      "type": "Int64",
+      "col_id": "3b50d951-0e49-4853-a780-3ff6f6f60010",
+      "createTime": 1633383379537,
+      "updateTime": 1633383379537
+    },
+    {
+      "name": "derived_id",
+      "description": "Thanyavaad10",
+      "type": "string",
+      "col_id": "3b50d951-0e49-4853-a780-3ff6f6f60014",
+      "createTime": 1633383379537,
+      "updateTime": 1633383379537
+    }
+  ]
+}

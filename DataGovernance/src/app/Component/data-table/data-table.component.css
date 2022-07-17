@@ -1,0 +1,76 @@
+
+#image {
+  margin-top: 32px;
+}
+.col-sm-4 {
+  margin-left: 94%;
+  margin-top: 30px;
+}
+
+#name {
+  margin-top: -31px;
+  font-weight: bold;
+}
+#accountname {
+  font-size: 18px;
+  margin-top: -31px;
+  font-weight: 400;
+  margin-left: 40px;
+}
+.dropdown {
+  margin-left: 43%;
+}
+mat-spinner {
+  zoom: 0.4;
+  margin-left: 38%;
+  margin-top: 200px;
+  position: absolute;
+}
+#datatableexample {
+  margin-top: 40px;
+}
+#sideOptions {
+  margin-left: 30%;
+  margin-top: -12px;
+}
+#DataTable {
+  margin-left: 112px;
+  margin-top: 24px;
+  width: 100%;
+}
+.container {
+  margin-left: -60px;
+  margin-top: -28px;
+}
+#sidenavigation {
+  width: 21%;
+  font-size: 12px;
+  overflow-x: hidden;
+}
+#content {
+  height: 88vh;
+  background-color: #ffff;
+  overflow-x: hidden;
+}
+#entity {
+  cursor: pointer;
+}
+@media screen and (max-width: 1140px) {
+  #sidenavigation {
+    width: 25%;
+    overflow-x: hidden;
+  }
+}
+@media screen and (max-width: 992px) {
+  #sidenavigation {
+    width: 23%;
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #sidenavigation {
+    width: 21%;
+    overflow-x: hidden;
+  }
+}

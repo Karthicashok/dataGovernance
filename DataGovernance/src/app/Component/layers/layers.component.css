@@ -1,0 +1,165 @@
+.image {
+  width: 70px;
+  margin-top: 20px;
+  padding-top: 4px;
+  margin-left: -44%;
+}
+mat-spinner {
+  zoom: 0.4;
+  
+  margin-top: 200px;
+  position: absolute;
+}
+table.dataTable thead #id {
+  background-image: none !important;
+  cursor:default;
+}
+#one {
+  margin-left: 14%;
+  margin-top: 30px;
+}
+#two {
+  margin-left: -15%;
+}
+.name {
+  margin-top: 8px;
+  font-weight: 400;
+  font-size: 18px;
+  margin-left: -12px;
+}
+#three {
+  margin-left: 42%;
+  margin-top: -14px;
+}
+
+.disabled {
+  opacity: 0.3;
+  cursor: not-allowed !important;
+}
+.name2 {
+ 
+  margin-top: -20px;
+  text-align: justify;
+}
+#flush-collapseTwo {
+  height: 331px;
+  overflow-y: auto;
+}
+.spinner {
+  margin-left: 44%;
+  margin-top: 14%;
+}
+.active {
+  border: 1px solid #e7f1ff;
+  padding: 10px;
+  background: #e7f1ff;
+  border-radius: 5px;
+}
+.allowed {
+  cursor: pointer;
+}
+#four {
+  margin-left: 62%;
+}
+.db {
+  width: 90% !important;
+}
+span:hover {
+  border: 1px solid #e7f1ff;
+  padding: 10px;
+  background: #e7f1ff;
+  border-radius: 5px;
+}
+#five {
+  border: 1px solid #e7f1ff;
+  padding: 10px;
+  background: #e7f1ff;
+  border-radius: 5px;
+}
+#six {
+  border: 1px solid #e7f1ff;
+  padding: 10px;
+  background: #e7f1ff;
+  border-radius: 5px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#seven {
+  margin-left: 71%;
+  margin-bottom: -2px;
+}
+#eight {
+  margin-left: 83%;
+  margin-top: -4.9%;
+}
+input {
+  cursor: pointer;
+}
+#sidenavigation {
+  width: 21%;
+  font-size: 12px;
+  overflow-x: hidden;
+}
+#layershead {
+  height: 88vh;
+  background-color: #ffff;
+  overflow-x: hidden;
+  width: 100%;
+}
+#layershead2 {
+  margin-left: -15%;
+  width: 106%;
+}
+#tabledata {
+  margin-left: 14%;
+  width: 95%;
+}
+.sidecontent {
+  margin-left: 230px;
+}
+#btn {
+  background-color: #046b99;
+  border: 1.5px solid #046b99;
+  color: white;
+  margin-left: 32px;
+}
+#upload2 {
+  background-color: #046b99;
+  border: 1.5px solid #046b99;
+  color: white;
+  margin-left: 62%;
+}
+.account {
+  font-size: small;
+  margin-left: -44%;
+  margin-top: -35px;
+  font-weight: 100;
+}
+@media screen and (max-width: 1140px) {
+  #sidenavigation {
+    width: 25%;
+    font-size: 12px;
+    overflow-x: hidden;
+  }
+}
+@media screen and (max-width: 992px) {
+  #sidenavigation {
+    width: 23%;
+    font-size: 12px;
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #sidenavigation {
+    width: 21%;
+    font-size: 12px;
+    overflow-x: hidden;
+  }
+}
+table.dataTable thead .sorting {
+  cursor: default;
+}

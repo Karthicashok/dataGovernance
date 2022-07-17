@@ -1,0 +1,85 @@
+mat-spinner {
+  zoom: 0.4;
+  margin-left: 40%;
+  margin-top: 200px;
+  position: absolute;
+}
+.sidenavigation {
+  width: 21%;
+  font-size: 12px;
+  overflow-x: hidden;
+}
+#content {
+  height: 88vh;
+  background-color: #ffff;
+  overflow-x: hidden;
+}
+#tablecontent {
+  margin-top: 40px;
+  width: 100%;
+  margin-left: 1px;
+}
+@media screen and (max-width: 1140px) {
+  #sidenavigation {
+    width: 25%;
+    font-size: 12px;
+    overflow-x: hidden;
+  }
+}
+@media screen and (max-width: 992px) {
+  #sidenavigation {
+    width: 23%;
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #sidenavigation {
+    width: 21%;
+    overflow-x: hidden;
+  }
+}
+#cancelbtn {
+  margin-left: 90%;
+  margin-top: 16px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid white;
+  color: #046b99;
+  text-transform: uppercase;
+}
+#cancel {
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid white;
+  color: #046b99;
+  text-transform: uppercase;
+}
+#savebtn {
+  background-color: #046b99;
+  cursor: pointer;
+  border: 1.5px solid #046b99;
+  color: white;
+}
+.disabled {
+  opacity: 0.3;
+  cursor: not-allowed !important;
+}
+.editbtn {
+  background-color: #046b99;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border: 1.5px solid #046b99;
+  color: white;
+}
+::-webkit-scrollbar {
+  width: 4px;
+  overflow-y: scroll;
+  background: #ffff;
+  box-shadow: #ffff;;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffff;
+  border-radius: 10px;
+}

@@ -1,0 +1,33 @@
+
+.db {
+  cursor: pointer;
+}
+details > * {
+  margin-left: 1em;
+}
+.image {
+  width: 15px;
+  height: 17px;
+}
+summary {
+  margin: 8px;
+}
+.layer {
+  margin-left: 16px;
+  margin-top: -30px;
+}
+#sheetsname {
+ 
+  margin-left: 42px;
+}
+.selected {
+  font-weight: bold;
+}
+
+#nosheetsname {
+  margin-top: -19px;
+  margin-left: 42px;
+}
+#selecteddb{
+  margin-left: 38px;
+}
