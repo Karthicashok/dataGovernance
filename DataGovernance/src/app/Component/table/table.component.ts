@@ -31,7 +31,6 @@ export class TableComponent implements OnInit {
 
     this.name = JSON.parse(localStorage.getItem('account')!);
    
-
     this.data = JSON.parse(localStorage.getItem('tabledata')!);
    
     this.sourcename = JSON.parse(localStorage.getItem('source')!).name;
@@ -50,7 +49,6 @@ export class TableComponent implements OnInit {
       .pipe(take(1))
       .subscribe(
         (res: any) => {
-         
           this.userList = res.value;
           setTimeout(() => {
             $('#datatableexample').DataTable({
@@ -64,7 +62,6 @@ export class TableComponent implements OnInit {
           this.spinner = false;
         },
         (error: any) => {
-         
           if ((error.statusText = 'Unauthorized')) {
             this.router.navigateByUrl('access_denied');
           }
@@ -75,7 +72,9 @@ export class TableComponent implements OnInit {
     localStorage.removeItem('tabledata');
     this.router.navigate(['layer']);
   }
+  schema(obj: any) {
   
+  }
   updateBreadcrumb(): void {
     const breadcrumbs = [
       { label: 'Home', url: 'home' },

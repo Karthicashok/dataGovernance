@@ -1,7 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
-  MatDialog,
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
@@ -22,20 +21,17 @@ export class UpdateComponent implements OnInit {
     private dataservice: DataService,
     private router: Router
   ) {
-    
   }
 
   ngOnInit(): void {}
   fileChanged(e: any) {
     //uploading the file
-    
     this.file = e.target.files[0];
     if (this.file) {
       this.isfileSelect = true;
     }
   }
   done(file: any) {
-  
     const fileReader = new FileReader();
     fileReader.readAsArrayBuffer(file);
     Swal.fire({
@@ -46,7 +42,6 @@ export class UpdateComponent implements OnInit {
     fileReader.onload = (e: any) => {
       const bufferArray = e?.target.result;
       const wb = XLSX.read(bufferArray, { type: 'buffer' });
-     
       const wsname = wb.SheetNames[0];
       const ws = wb.Sheets[wsname];
 
@@ -59,7 +54,6 @@ export class UpdateComponent implements OnInit {
       };
       this.dataservice.uploadschema(upload).subscribe(
         (res: any) => {
-         
           Swal.fire({
             icon: 'success',
             title: 'File Uploaded Sucessfully.',
@@ -73,7 +67,6 @@ export class UpdateComponent implements OnInit {
           });
         },
         (error: any) => {
-          
           if(error.status==401){
             this.router.navigateByUrl('access_denied');
           }else{
@@ -86,7 +79,7 @@ export class UpdateComponent implements OnInit {
          
         }
       );
-    
+      
     };
   }
   close() {
